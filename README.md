@@ -9,7 +9,7 @@ This project contains automated test cases for CRUD operations on USER endpoints
 ## Setup
 
 Clone the repository:
-git clone https://github.com/Heba114/Q-pros_API
+git clone https://github.com/Heba114/Q-pros_API in "Master" branch
 
 Import the project into your IDE as a Maven project.
 
