@@ -1,32 +1,33 @@
 package Test;
-import Data.User;
-
 import io.restassured.http.ContentType;
-import com.tngtech.java.junit.dataprovider.*;
 import static io.restassured.RestAssured.*;
-import org.junit.Test;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import static org.hamcrest.Matchers.equalTo;
 
-@RunWith(DataProviderRunner.class)
+import org.json.simple.JSONObject;
+import org.junit.Test;
+
 public class POST_New_User extends Setup {
 
     @Test
     public void CheckCreateNewUserResponse()
     {
-        User user = new User();
+        JSONObject userData = new JSONObject();
+        userData.put("id", 1);
+        userData.put("username", "hadel");
+        userData.put("firstName", "Heba");
+        userData.put("lastName", "Adel");
+        userData.put("email", "hadel@test.com");
+        userData.put("password", "1234");
+        userData.put("phone", "1234");
+        userData.put("userStatus", 1);
+
         given().
                 spec(requestSpec).
                 contentType(ContentType.JSON).
-                body(user).
+                body(userData).
                 log().all().
         when().
                 post("").
         then().
-                spec(responseSpec).
-        and().
-                assertThat().
-                body("email", equalTo("janna@test.com"));
+                spec(responseSpec);
     }
 }

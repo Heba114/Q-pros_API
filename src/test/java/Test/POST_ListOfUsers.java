@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class POST_ListOfUsers extends Setup{
 
@@ -61,9 +60,6 @@ public class POST_ListOfUsers extends Setup{
                 post("/createWithList").
         then().
                 spec(responseSpec);
-//        and().
-//                assertThat().
-//                statusCode(200);
     }
 
 }

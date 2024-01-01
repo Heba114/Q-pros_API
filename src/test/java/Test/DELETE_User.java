@@ -1,9 +1,8 @@
 package Test;
-import Test.Setup;
-import Data.User;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -14,13 +13,22 @@ public class DELETE_User extends Setup {
 
     @Test
     public void CheckDeleteResponse(){
-        User user = new User();
+        JSONObject userData = new JSONObject();
+        userData.put("id", 1);
+        userData.put("username", "hadel");
+        userData.put("firstName", "Janna");
+        userData.put("lastName", "Ibrahim");
+        userData.put("email", "jana@test.com");
+        userData.put("password", "2323");
+        userData.put("phone", "2323");
+        userData.put("userStatus", 1);
+
         //Step 1 : POST new user data
         Response response =
         given().
                 spec(requestSpec).
                 contentType(ContentType.JSON).
-                body(user).log().all().
+                body(userData).log().all().
         when().
                 post("");
 

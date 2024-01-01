@@ -24,7 +24,7 @@ public class Setup {
     @BeforeClass
     public static void createResponseSpecification(){
         responseSpec = new ResponseSpecBuilder().
-                //expectStatusCode(200).
+                expectStatusCode(200).
                 build();
     }
 }
