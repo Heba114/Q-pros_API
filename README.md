@@ -21,8 +21,6 @@ Import the project into your IDE as a Maven project.
 src/
 ├── test/
 │   └── java/
-│       └── Data/
-│           ├── User/   # Page object classes for user data
 │       └── Test/
 │           ├── GET_User_Data/   # Test scenario for get user data
 │           ├── POST_New_User/   # Test scenario for add new user
